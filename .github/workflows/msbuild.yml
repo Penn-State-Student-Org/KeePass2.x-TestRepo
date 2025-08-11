@@ -47,4 +47,4 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: vstest.console.exe .\KeePass_2.Tests\Release\net48\KeePass_2.Tests.dll
+      run: msbuild ${{env.SOLUTION_FILE_PATH}} /m /t:VSTest /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:VSTestCollect="XPlat Code Coverage"
