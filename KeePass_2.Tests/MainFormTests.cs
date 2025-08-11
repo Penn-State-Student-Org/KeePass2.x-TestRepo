@@ -12,5 +12,11 @@ namespace KeePass.Tests
             var form = new MainForm();
             Assert.IsNotNull(form);
         }
+
+        [TestMethod]
+        public void Test2()
+        {
+            
+        }
     }
 }
