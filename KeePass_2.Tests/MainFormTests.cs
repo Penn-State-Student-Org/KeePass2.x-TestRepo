@@ -1,4 +1,5 @@
-﻿using KeePass.Forms;
+﻿using System.Windows.Forms;
+using KeePass.Forms;
 
 namespace KeePass.Tests
 {
@@ -14,9 +15,11 @@ namespace KeePass.Tests
         }
 
         [TestMethod]
-        public void Test2()
+        public void MainForm_SetAndGetWindowState()
         {
-            
+            var form = new MainForm();
+            form.WindowState = FormWindowState.Maximized;
+            Assert.AreEqual(FormWindowState.Maximized, form.WindowState);
         }
     }
 }
