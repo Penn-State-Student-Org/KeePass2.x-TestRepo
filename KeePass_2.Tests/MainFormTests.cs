@@ -1,4 +1,5 @@
-﻿using KeePass.Forms;
+﻿using System.Windows.Forms;
+using KeePass.Forms;
 
 namespace KeePass.Tests
 {
@@ -11,6 +12,14 @@ namespace KeePass.Tests
             // Basic test to ensure constructor does not throw
             var form = new MainForm();
             Assert.IsNotNull(form);
+        }
+
+        [TestMethod]
+        public void MainForm_SetAndGetWindowState()
+        {
+            var form = new MainForm();
+            form.WindowState = FormWindowState.Maximized;
+            Assert.AreEqual(FormWindowState.Maximized, form.WindowState);
         }
     }
 }
